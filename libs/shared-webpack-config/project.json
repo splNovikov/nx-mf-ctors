@@ -1,0 +1,19 @@
+{
+  "name": "shared-webpack-config",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-webpack-config/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/shared-webpack-config",
+        "main": "libs/shared-webpack-config/src/index.ts",
+        "tsConfig": "libs/shared-webpack-config/tsconfig.lib.json",
+        "assets": ["shared-webpack-config/*.md"]
+      }
+    }
+  }
+}

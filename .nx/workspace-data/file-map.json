@@ -1,0 +1,307 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.2.2",
+  "pathMappings": {
+    "@nx-mf-ctors/shared-webpack-config": [
+      "libs/shared-webpack-config/src/index.ts"
+    ],
+    "remote/Module": [
+      "apps/remote/src/remote-entry.ts"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "8613488698476087934"
+      },
+      {
+        "file": "README.md",
+        "hash": "11938628975285382090"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "10770449096712831357"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "6870352021923392442"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "nx.json",
+        "hash": "9397552832106516400"
+      },
+      {
+        "file": "package.json",
+        "hash": "8793624238995060603"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "17313810862849093591"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "16019299962647409235"
+      }
+    ],
+    "projectFileMap": {
+      "remote": [
+        {
+          "file": "apps/remote/.babelrc",
+          "hash": "13020124393823981135"
+        },
+        {
+          "file": "apps/remote/eslint.config.mjs",
+          "hash": "8789163670399984295",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/remote/jest.config.ts",
+          "hash": "10206845897980445202"
+        },
+        {
+          "file": "apps/remote/module-federation.config.ts",
+          "hash": "3413831589323778405",
+          "deps": [
+            "npm:@nx/module-federation"
+          ]
+        },
+        {
+          "file": "apps/remote/project.json",
+          "hash": "17736222792381486411"
+        },
+        {
+          "file": "apps/remote/src/app/app.spec.tsx",
+          "hash": "1709858289239894465",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/remote/src/app/app.tsx",
+          "hash": "13006589111975746850"
+        },
+        {
+          "file": "apps/remote/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/remote/src/bootstrap.tsx",
+          "hash": "4731961929376199421",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/remote/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/remote/src/index.html",
+          "hash": "7094210076951802280"
+        },
+        {
+          "file": "apps/remote/src/main.ts",
+          "hash": "10018980967429810802"
+        },
+        {
+          "file": "apps/remote/src/remote-entry.ts",
+          "hash": "16889477869301519830"
+        },
+        {
+          "file": "apps/remote/tsconfig.app.json",
+          "hash": "16481674911259912109"
+        },
+        {
+          "file": "apps/remote/tsconfig.json",
+          "hash": "9850153468027031608"
+        },
+        {
+          "file": "apps/remote/tsconfig.spec.json",
+          "hash": "11537943481495421274"
+        },
+        {
+          "file": "apps/remote/webpack.config.prod.ts",
+          "hash": "3215656518859184930"
+        },
+        {
+          "file": "apps/remote/webpack.config.ts",
+          "hash": "1706901239773748981",
+          "deps": [
+            "npm:@nx/webpack",
+            "npm:@nx/react",
+            "npm:@nx/module-federation",
+            "npm:webpack",
+            "shared-webpack-config"
+          ]
+        }
+      ],
+      "shared-webpack-config": [
+        {
+          "file": "libs/shared-webpack-config/README.md",
+          "hash": "16243171703497758203"
+        },
+        {
+          "file": "libs/shared-webpack-config/eslint.config.mjs",
+          "hash": "9750370578825815921",
+          "deps": [
+            [
+              "npm:jsonc-eslint-parser",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "libs/shared-webpack-config/package.json",
+          "hash": "14710278155138919716",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "libs/shared-webpack-config/project.json",
+          "hash": "10630875719019104224"
+        },
+        {
+          "file": "libs/shared-webpack-config/src/index.ts",
+          "hash": "3785540539181854423",
+          "deps": [
+            "npm:webpack"
+          ]
+        },
+        {
+          "file": "libs/shared-webpack-config/src/lib/shared-webpack-config.ts",
+          "hash": "10956284953323322439"
+        },
+        {
+          "file": "libs/shared-webpack-config/tsconfig.json",
+          "hash": "14348528073521137485"
+        },
+        {
+          "file": "libs/shared-webpack-config/tsconfig.lib.json",
+          "hash": "9908975088309596753"
+        }
+      ],
+      "host": [
+        {
+          "file": "apps/host/.babelrc",
+          "hash": "13020124393823981135"
+        },
+        {
+          "file": "apps/host/eslint.config.mjs",
+          "hash": "8789163670399984295",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/host/jest.config.ts",
+          "hash": "6338215906421688295"
+        },
+        {
+          "file": "apps/host/module-federation.config.ts",
+          "hash": "14882786674601567",
+          "deps": [
+            "npm:@nx/module-federation"
+          ]
+        },
+        {
+          "file": "apps/host/project.json",
+          "hash": "3261109523825021060"
+        },
+        {
+          "file": "apps/host/src/app/app.spec.tsx",
+          "hash": "2891183709765567679",
+          "deps": [
+            "npm:@testing-library/react",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/host/src/app/app.tsx",
+          "hash": "11784815300668516584",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom",
+            [
+              "remote",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/host/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/host/src/bootstrap.tsx",
+          "hash": "763379880219152615",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:react-router-dom"
+          ]
+        },
+        {
+          "file": "apps/host/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/host/src/index.html",
+          "hash": "2368870738802868272"
+        },
+        {
+          "file": "apps/host/src/main.ts",
+          "hash": "14701344671644104227"
+        },
+        {
+          "file": "apps/host/tsconfig.app.json",
+          "hash": "16481674911259912109"
+        },
+        {
+          "file": "apps/host/tsconfig.json",
+          "hash": "9850153468027031608"
+        },
+        {
+          "file": "apps/host/tsconfig.spec.json",
+          "hash": "11537943481495421274"
+        },
+        {
+          "file": "apps/host/webpack.config.prod.ts",
+          "hash": "11468271672952390395",
+          "deps": [
+            "npm:@nx/webpack",
+            "npm:@nx/react",
+            "npm:@nx/module-federation"
+          ]
+        },
+        {
+          "file": "apps/host/webpack.config.ts",
+          "hash": "1706901239773748981",
+          "deps": [
+            "npm:@nx/webpack",
+            "npm:@nx/react",
+            "npm:@nx/module-federation",
+            "npm:webpack",
+            "shared-webpack-config"
+          ]
+        }
+      ]
+    }
+  }
+}
