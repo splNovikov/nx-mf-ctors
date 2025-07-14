@@ -17,7 +17,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-mf-ctors/build-config": ["libs/build-config/src/index.ts"],
       "remote/Module": ["apps/remote/src/remote-entry.ts"]
     }
   },

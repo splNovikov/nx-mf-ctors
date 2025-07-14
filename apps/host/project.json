@@ -11,7 +11,7 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/host",
+        "outputPath": "dist/apps/host",
         "index": "apps/host/src/index.html",
         "baseHref": "/",
         "main": "apps/host/src/main.ts",

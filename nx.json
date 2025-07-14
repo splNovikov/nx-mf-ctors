@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "cli": {
-    "defaultCollection": "@nx/react",
     "packageManager": "yarn"
   },
   "namedInputs": {
@@ -16,13 +15,12 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+    "sharedGlobals": []
   },
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "libs"
   },
-  "nxCloudId": "687127d7e19d6f57ebe72b78",
   "targetDefaults": {
     "build": {
       "cache": true,
@@ -60,11 +58,6 @@
       ],
       "dependsOn": ["^build"],
       "cache": true
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     }
   },
   "generators": {
@@ -83,13 +76,5 @@
         "linter": "eslint"
       }
     }
-  },
-  "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "eslint:lint"
-      }
-    }
-  ]
+  }
 }

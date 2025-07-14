@@ -11,7 +11,7 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/remote",
+        "outputPath": "dist/apps/remote",
         "index": "apps/remote/src/index.html",
         "baseHref": "/",
         "main": "apps/remote/src/main.ts",

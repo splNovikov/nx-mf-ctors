@@ -3,7 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 const Remote = React.lazy(() => import('remote/Module'));
 
-const Blyat = () => <div>Blyat</div>
+const Host = () => <div>HOST?</div>
 
 export function App() {
   return (
@@ -17,7 +17,7 @@ export function App() {
         </li>
       </ul>
       <Routes>
-        <Route path="/" element={<Blyat />} />
+        <Route path="/" element={<Host />} />
         <Route path="/remote" element={<Remote />} />
       </Routes>
     </React.Suspense>
