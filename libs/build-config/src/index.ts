@@ -1,3 +1,5 @@
+// export * from './lib/build-config';
+
 import { Configuration } from 'webpack';
 
 const sharedConfig: Configuration = {
@@ -17,3 +19,4 @@ const sharedConfig: Configuration = {
 };
 
 export default sharedConfig;
+

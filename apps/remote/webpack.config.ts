@@ -3,7 +3,8 @@ import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/module-federation/webpack.js';
 import { ModuleFederationConfig } from '@nx/module-federation';
 import { Configuration } from 'webpack';
-import sharedConfig from '../../libs/shared-webpack-config'; // todo: @nx-mf-ctors/shared-webpack-config
+// import sharedConfig from '@nx-mf-ctors/build-config';
+import sharedConfig from '../../libs/build-config/src/index';
 import baseConfig from './module-federation.config';
 
 const config: ModuleFederationConfig = {

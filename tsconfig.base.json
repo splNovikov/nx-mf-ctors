@@ -17,9 +17,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-mf-ctors/shared-webpack-config": [
-        "libs/shared-webpack-config/src/index.ts"
-      ],
+      "@nx-mf-ctors/build-config": ["libs/build-config/src/index.ts"],
       "remote/Module": ["apps/remote/src/remote-entry.ts"]
     }
   },

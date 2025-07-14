@@ -1,5 +1,5 @@
 {
-  "name": "@nx-mf-ctors/shared-webpack-config",
+  "name": "@nx-mf-ctors/build-config",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",
