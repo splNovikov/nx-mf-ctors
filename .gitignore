@@ -12,6 +12,8 @@ out-tsc/
 
 # NX cache
 nx-cache/
+.nx/cache
+.nx/workspace-data
 .cache/
 .next/
 

@@ -21,7 +21,7 @@
     "nonProjectFiles": [
       {
         "file": ".gitignore",
-        "hash": "8613488698476087934"
+        "hash": "5830952863042822863"
       },
       {
         "file": "README.md",
@@ -49,7 +49,7 @@
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "17313810862849093591"
+        "hash": "3357768701493715930"
       },
       {
         "file": "yarn.lock",
@@ -57,6 +57,52 @@
       }
     ],
     "projectFileMap": {
+      "shared-webpack-config": [
+        {
+          "file": "libs/shared-webpack-config/README.md",
+          "hash": "16243171703497758203"
+        },
+        {
+          "file": "libs/shared-webpack-config/eslint.config.mjs",
+          "hash": "9750370578825815921",
+          "deps": [
+            [
+              "npm:jsonc-eslint-parser",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "libs/shared-webpack-config/package.json",
+          "hash": "14710278155138919716",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "libs/shared-webpack-config/project.json",
+          "hash": "10630875719019104224"
+        },
+        {
+          "file": "libs/shared-webpack-config/src/index.ts",
+          "hash": "3785540539181854423",
+          "deps": [
+            "npm:webpack"
+          ]
+        },
+        {
+          "file": "libs/shared-webpack-config/src/lib/shared-webpack-config.ts",
+          "hash": "10956284953323322439"
+        },
+        {
+          "file": "libs/shared-webpack-config/tsconfig.json",
+          "hash": "9199459513177744809"
+        },
+        {
+          "file": "libs/shared-webpack-config/tsconfig.lib.json",
+          "hash": "9908975088309596753"
+        }
+      ],
       "remote": [
         {
           "file": "apps/remote/.babelrc",
@@ -149,52 +195,6 @@
             "npm:webpack",
             "shared-webpack-config"
           ]
-        }
-      ],
-      "shared-webpack-config": [
-        {
-          "file": "libs/shared-webpack-config/README.md",
-          "hash": "16243171703497758203"
-        },
-        {
-          "file": "libs/shared-webpack-config/eslint.config.mjs",
-          "hash": "9750370578825815921",
-          "deps": [
-            [
-              "npm:jsonc-eslint-parser",
-              "dynamic"
-            ]
-          ]
-        },
-        {
-          "file": "libs/shared-webpack-config/package.json",
-          "hash": "14710278155138919716",
-          "deps": [
-            "npm:tslib"
-          ]
-        },
-        {
-          "file": "libs/shared-webpack-config/project.json",
-          "hash": "10630875719019104224"
-        },
-        {
-          "file": "libs/shared-webpack-config/src/index.ts",
-          "hash": "3785540539181854423",
-          "deps": [
-            "npm:webpack"
-          ]
-        },
-        {
-          "file": "libs/shared-webpack-config/src/lib/shared-webpack-config.ts",
-          "hash": "10956284953323322439"
-        },
-        {
-          "file": "libs/shared-webpack-config/tsconfig.json",
-          "hash": "14348528073521137485"
-        },
-        {
-          "file": "libs/shared-webpack-config/tsconfig.lib.json",
-          "hash": "9908975088309596753"
         }
       ],
       "host": [
