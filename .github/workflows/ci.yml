@@ -47,8 +47,8 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      - run: yarn nx build host --configuration=production --baseHref=/nx-mf-ctors/
-      - run: yarn nx build vacationPay --configuration=production --baseHref=/nx-mf-ctors/
+      - run: yarn nx build host --configuration=production
+      - run: yarn nx build vacationPay --configuration=production
 
       - run: ls -la ./dist/apps/
 
