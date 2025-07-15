@@ -31,7 +31,7 @@ jobs:
       - run: yarn nx fix-ci
         if: always()
 
-  deploy-host:
+  deploy:
     needs: main
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -47,40 +47,18 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
+      # Билдим оба приложения
       - run: yarn nx build host --configuration=production
-
-      - name: Deploy host to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/apps/host
-          publish_branch: gh-pages
-          destination_dir: host
-          force_orphan: true
-
-  deploy-vacation-pay:
-    needs: main
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'yarn'
-
-      - run: yarn install --frozen-lockfile
-
       - run: yarn nx build vacationPay --configuration=production
 
-      - name: Deploy vacationPay to GitHub Pages
+      # Можно проверить что билд есть
+      - run: ls -la ./dist/apps/
+
+      # Деплой всего dist/apps
+      - name: Deploy all apps to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/apps/vacationPay
+          publish_dir: ./dist/apps
           publish_branch: gh-pages
-          destination_dir: vacationPay
           force_orphan: true
