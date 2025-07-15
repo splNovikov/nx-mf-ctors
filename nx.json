@@ -15,8 +15,9 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
+  "nxCloudId": "68756b8c429e580da140b980",
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "libs"
@@ -64,15 +65,15 @@
     "@nx/react": {
       "application": {
         "babel": true,
-        "style": "none",
+        "style": "scss",
         "linter": "eslint",
         "bundler": "webpack"
       },
       "component": {
-        "style": "none"
+        "style": "scss"
       },
       "library": {
-        "style": "none",
+        "style": "scss",
         "linter": "eslint"
       }
     }

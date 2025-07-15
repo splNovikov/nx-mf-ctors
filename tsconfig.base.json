@@ -1,7 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "esModuleInterop": true,
+    // p.novikov: this line is commented out because it causes issues with module federation
+    //    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "rootDir": ".",
     "sourceMap": true,
@@ -17,7 +18,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "remote/Module": ["apps/remote/src/remote-entry.ts"]
+      "vacationPay/Module": ["apps/vacationPay/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

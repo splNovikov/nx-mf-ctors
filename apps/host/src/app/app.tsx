@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
-const Remote = React.lazy(() => import('remote/Module'));
+const VacationPay = React.lazy(() => import('vacationPay/Module'));
 
 const Host = () => <div>HOST?</div>
 
@@ -13,12 +13,12 @@ export function App() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/remote">Remote</Link>
+          <Link to="/vacation-pay">VacationPay</Link>
         </li>
       </ul>
       <Routes>
         <Route path="/" element={<Host />} />
-        <Route path="/remote" element={<Remote />} />
+        <Route path="/vacation-pay" element={<VacationPay />} />
       </Routes>
     </React.Suspense>
   );
