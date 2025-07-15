@@ -47,14 +47,11 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      # Билдим оба приложения
-      - run: yarn nx build host --configuration=production
-      - run: yarn nx build vacationPay --configuration=production
+      - run: yarn nx build host --configuration=production --baseHref=/nx-mf-ctors/
+      - run: yarn nx build vacationPay --configuration=production --baseHref=/nx-mf-ctors/
 
-      # Можно проверить что билд есть
       - run: ls -la ./dist/apps/
 
-      # Деплой всего dist/apps
       - name: Deploy all apps to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
