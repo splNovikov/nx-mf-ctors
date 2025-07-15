@@ -25,12 +25,7 @@
   "targetDefaults": {
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "configurations": {
-        "github": {
-          "publicPath": "/nx-mf-ctors/"
-        }
-      }
+      "dependsOn": ["^build"]
     },
     "@nx/eslint:lint": {
       "cache": true,
