@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
+import styles from './app.module.scss'
+
 const VacationPay = React.lazy(() => import('vacationPay/Module'));
 
 const Host = () => <div>HOST?</div>
@@ -8,7 +10,7 @@ const Host = () => <div>HOST?</div>
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <ul>
+      <ul className={styles.nav}>
         <li>
           <Link to="/">Home</Link>
         </li>
