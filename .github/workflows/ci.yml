@@ -54,7 +54,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/apps/host
+          publish_branch: gh-pages
           destination_dir: host
+          force_orphan: true
 
   deploy-vacation-pay:
     needs: main
@@ -79,4 +81,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/apps/vacationPay
+          publish_branch: gh-pages
           destination_dir: vacationPay
+          force_orphan: true
