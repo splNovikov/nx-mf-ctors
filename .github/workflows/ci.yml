@@ -47,15 +47,34 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      - run: yarn nx build host --configuration=production
-      - run: yarn nx build vacationPay --configuration=production
+      - name: Build applications
+        run: |
+          yarn nx build host --configuration=production
+          yarn nx build vacationPay --configuration=production
 
-      - run: ls -la ./dist/apps/
+      - name: List build output
+        run: ls -la ./dist/apps/
 
-      - name: Deploy all apps to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup SSH key
+        uses: shimataro/ssh-key-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/apps
-          publish_branch: gh-pages
-          force_orphan: true
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Deploy to Timeweb server
+        run: |
+          # Create remote directories if they don't exist
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@45.144.221.205 "mkdir -p /var/www/host /var/www/vacationPay"
+          
+          # Deploy host application
+          scp -o StrictHostKeyChecking=no -r ./dist/apps/host/* ${{ secrets.SSH_USER }}@45.144.221.205:/var/www/host/
+          
+          # Deploy vacationPay application
+          scp -o StrictHostKeyChecking=no -r ./dist/apps/vacationPay/* ${{ secrets.SSH_USER }}@45.144.221.205:/var/www/vacationPay/
+          
+          # Set proper permissions
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@45.144.221.205 "chmod -R 755 /var/www/host /var/www/vacationPay"
+
+      - name: Restart web server (if needed)
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@45.144.221.205 "sudo systemctl reload nginx || sudo service nginx reload" || true
