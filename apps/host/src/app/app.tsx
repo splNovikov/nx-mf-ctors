@@ -5,7 +5,7 @@ import styles from './app.module.scss'
 
 const VacationPay = React.lazy(() => import('vacationPay/Module'));
 
-const Host = () => <div>HOST?!</div>
+const Host = () => <div>HOST?</div>
 
 export function App() {
   return (
