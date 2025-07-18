@@ -49,24 +49,17 @@ EOF
 tee /etc/nginx/sites-available/vacationPay > /dev/null <<EOF
 server {
     listen 80;
-    server_name vacation-pay.c-tors.ru;
+    server_name vacation-pay.c-tors.ru www.vacation-pay.c-tors.ru;
 
     root /var/www/vacationPay;
     index index.html;
 
-
-    location /vacationPay {
-        alias /var/www/vacationPay;
+    location / {
         try_files \$uri \$uri/ /index.html;
     }
 
-    location /vacationPay/ {
-        alias /var/www/vacationPay/;
-        try_files \$uri \$uri/ /vacationPay/index.html;
-    }
-
-    # Handle static assets for vacationPay app
-    location ~* ^/vacationPay/.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+    # Handle static assets
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
