@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Server setup script for Timeweb deployment (Root version)
+# Nginx deployment setup script for Timeweb server
 # Run this script as root on your Timeweb server (45.144.221.205)
 
-echo "🚀 Setting up Timeweb server for deployment..."
+echo "🚀 Setting up Timeweb server for nginx deployment..."
 
 # Update system packages
 apt update && apt upgrade -y
@@ -52,18 +52,18 @@ server {
     root /var/www/vacationPay;
     index index.html;
 
-    location /vacation {
+    location /vacationPay {
         alias /var/www/vacationPay;
         try_files \$uri \$uri/ /index.html;
     }
 
-    location /vacation/ {
+    location /vacationPay/ {
         alias /var/www/vacationPay/;
-        try_files \$uri \$uri/ /vacation/index.html;
+        try_files \$uri \$uri/ /vacationPay/index.html;
     }
 
-    # Handle static assets for vacation app
-    location ~* ^/vacation/.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+    # Handle static assets for vacationPay app
+    location ~* ^/vacationPay/.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
@@ -113,4 +113,4 @@ echo "3. Test deployment by pushing to main branch"
 echo ""
 echo "🌐 Your applications will be available at:"
 echo "   - Host app: http://45.144.221.205/"
-echo "   - VacationPay app: http://45.144.221.205/vacation/" 
+echo "   - VacationPay app: http://45.144.221.205/vacationPay/" 
