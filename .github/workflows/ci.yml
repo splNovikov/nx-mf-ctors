@@ -35,6 +35,8 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    env:
+      VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,14 +49,7 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      - name: Debug VACATION_PAY_REMOTE_URL
-        run: echo "Remote URL is $VACATION_PAY_REMOTE_URL"
-        env:
-          VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}
-
       - name: Build applications
-        env:
-          VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}
         run: |
           yarn nx build host --configuration=production
           yarn nx build vacationPay --configuration=production
