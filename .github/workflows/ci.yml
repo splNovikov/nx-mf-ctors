@@ -47,6 +47,11 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
+      - name: Debug VACATION_PAY_REMOTE_URL
+        run: echo "Remote URL is $VACATION_PAY_REMOTE_URL"
+        env:
+          VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}
+
       - name: Build applications
         env:
           VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}

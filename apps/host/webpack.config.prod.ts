@@ -6,7 +6,11 @@ import { ModuleFederationConfig } from '@nx/module-federation';
 import baseConfig from './module-federation.config';
 
 const vacationPayRemoteUrl = process.env.VACATION_PAY_REMOTE_URL;
-console.log('REMOTE_URL', vacationPayRemoteUrl);
+
+if (!vacationPayRemoteUrl) {
+  console.error('🚨 VACATION_PAY_REMOTE_URL not provided!');
+  throw new Error('VACATION_PAY_REMOTE_URL is undefined!');
+}
 
 const prodConfig: ModuleFederationConfig = {
   ...baseConfig,
