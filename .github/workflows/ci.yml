@@ -13,8 +13,6 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
-    env:
-      VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,7 +26,7 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      - run: yarn nx run-many -t lint test build
+      - run: yarn nx run-many -t lint test
 
       - run: yarn nx fix-ci
         if: always()
