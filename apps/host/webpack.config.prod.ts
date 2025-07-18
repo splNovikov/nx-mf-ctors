@@ -5,6 +5,9 @@ import { ModuleFederationConfig } from '@nx/module-federation';
 
 import baseConfig from './module-federation.config';
 
+const vacationPayRemoteUrl = process.env.VACATION_PAY_REMOTE_URL;
+console.log('REMOTE_URL', vacationPayRemoteUrl);
+
 const prodConfig: ModuleFederationConfig = {
   ...baseConfig,
   /*
@@ -24,7 +27,7 @@ const prodConfig: ModuleFederationConfig = {
    *   ['app2', 'http://example.com/path/to/app2/remoteEntry.js'],
    * ]
    */
-  remotes: [['vacationPay', 'http://localhost:4201/']],
+  remotes: [['vacationPay', vacationPayRemoteUrl]],
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.

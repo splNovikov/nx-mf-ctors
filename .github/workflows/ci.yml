@@ -48,6 +48,8 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - name: Build applications
+        env:
+          VACATION_PAY_REMOTE_URL: ${{ secrets.VACATION_PAY_REMOTE_URL }}
         run: |
           yarn nx build host --configuration=production
           yarn nx build vacationPay --configuration=production
@@ -65,13 +67,13 @@ jobs:
         run: |
           # Create remote directories if they don't exist
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@45.144.221.205 "mkdir -p /var/www/host /var/www/vacationPay"
-          
+
           # Deploy host application
           scp -o StrictHostKeyChecking=no -r ./dist/apps/host/* ${{ secrets.SSH_USER }}@45.144.221.205:/var/www/host/
-          
+
           # Deploy vacationPay application
           scp -o StrictHostKeyChecking=no -r ./dist/apps/vacationPay/* ${{ secrets.SSH_USER }}@45.144.221.205:/var/www/vacationPay/
-          
+
           # Set proper permissions
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@45.144.221.205 "chmod -R 755 /var/www/host /var/www/vacationPay"
 
