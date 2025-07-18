@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nginx deployment setup script for Timeweb server
-# Run this script as root on your Timeweb server (45.144.221.205)
+# Run this script as root on your Timeweb server (c-tors.ru)
 
 echo "🚀 Setting up Timeweb server for nginx deployment..."
 
@@ -23,7 +23,8 @@ chown -R www-data:www-data /var/www/vacationPay
 tee /etc/nginx/sites-available/host > /dev/null <<EOF
 server {
     listen 80;
-    server_name 45.144.221.205;  # Using IP address for now
+    server_name c-tors.ru www.c-tors.ru;
+
     root /var/www/host;
     index index.html;
 
@@ -48,9 +49,11 @@ EOF
 tee /etc/nginx/sites-available/vacationPay > /dev/null <<EOF
 server {
     listen 80;
-    server_name 45.144.221.205;  # Using IP address for now
+    server_name vacation-pay.c-tors.ru;
+
     root /var/www/vacationPay;
     index index.html;
+
 
     location /vacationPay {
         alias /var/www/vacationPay;
@@ -107,10 +110,10 @@ fi
 
 echo "✅ Server setup complete!"
 echo "📋 Next steps:"
-echo "1. Verify you can SSH without password: ssh root@45.144.221.205"
+echo "1. Verify you can SSH without password: ssh root@c-tors.ru"
 echo "2. Add GitHub secrets as described in the deployment guide"
 echo "3. Test deployment by pushing to main branch"
 echo ""
 echo "🌐 Your applications will be available at:"
-echo "   - Host app: http://45.144.221.205/"
-echo "   - VacationPay app: http://45.144.221.205/vacationPay/" 
+echo "   - Host app: http://c-tors.ru/"
+echo "   - VacationPay app: http://vacation-pay.c-tors.ru/"
